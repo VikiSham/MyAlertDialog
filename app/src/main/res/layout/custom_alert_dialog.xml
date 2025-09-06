@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+    <!-- Title -->
+        <ImageView
+            android:id="@+id/alertImage"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="7dp"
+            android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/alertTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Your Custom Title"
+        android:textColor="#000000"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:gravity="left"/>
+    </LinearLayout>
+
+    <!-- Message -->
+    <TextView
+        android:id="@+id/alertMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Your custom message goes here."
+        android:textColor="#000000"
+        android:textSize="17dp"
+        android:layout_marginTop="8dp"
+        android:gravity="left"/>
+
+    <!-- Add your custom content here -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="right"
+        android:layout_gravity="right"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnNegative"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:backgroundTint="#00000000"
+            android:text="No"
+            android:textColor="#FF0000" />
+
+        <Button
+            android:id="@+id/btnPositive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#00000000"
+            android:text="Yes"
+            android:textColor="#008000" />
+    </LinearLayout>
+</LinearLayout>
