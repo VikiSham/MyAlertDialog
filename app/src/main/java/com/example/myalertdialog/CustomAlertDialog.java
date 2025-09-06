@@ -12,26 +12,24 @@ import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 
 public class CustomAlertDialog {
+    private AlertDialog.Builder builder;
     private AlertDialog alertDialog;
     private ImageView alertImage;
     private TextView alertTitle;
     private TextView alertMessage;
     private Button btnNegative;
     private Button btnPositive;
-
     private Context context;
     private DialogClickListener listener;
 
     public interface DialogClickListener {
         void onPositiveButtonClick();
     }
-
     @SuppressLint("MissingInflatedId")
     public CustomAlertDialog(Context context, DialogClickListener listener) {
         this.context = context;
         this.listener = listener;
-
-        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder = new AlertDialog.Builder(context);
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(R.layout.custom_alert_dialog, null);
         builder.setView(view);
@@ -96,7 +94,6 @@ public class CustomAlertDialog {
         alertDialog2.show();
     }
 
-    // שאר המתודות (setTitle, setMessage, וכו') נשארות כפי שהן
     public void setTitle(String title) {
         alertTitle.setText(title);
     }
@@ -105,7 +102,6 @@ public class CustomAlertDialog {
         alertMessage.setText(message);
     }
 
-    // ... שאר הקוד
     public void setIcon(int idDrawable) {
         alertImage.setImageResource(idDrawable);
         alertImage.setVisibility(View.VISIBLE);

@@ -108,9 +108,9 @@ public class MainActivity extends AppCompatActivity implements CustomAlertDialog
         builder.setIcon(R.drawable.outline_crisis_alert_24);
 
         //Open one of the options
-        oneChoiseList(colors,color);
+        //oneChoiseList(colors,color);
         //multiChoiseList(colors,color);
-        //inputAlert();
+        inputAlert();
 
         builder.setNegativeButton("Cancel",new DialogInterface.OnClickListener() {
                     @Override
@@ -156,7 +156,8 @@ public class MainActivity extends AppCompatActivity implements CustomAlertDialog
     }
     private void inputAlert() {
         builder.setTitle("Configured Alert\nThis is Input Alert");
-        // כאשר יש יותר מרכיב גרפי אחד להצגה ע"ג הדיאלוג ועמ למנוע מצב שאחד דורס את השני יוצרים תסדיר דינמי ועליו מסדרים את כל הרכיבים
+        // כאשר יש יותר מרכיב גרפי אחד להצגה ע"ג הדיאלוג
+        // ועמ למנוע מצב שאחד דורס את השני יוצרים תסדיר דינמי ועליו מסדרים את כל הרכיבים
         // יוצרים LinearLayout כדי להכיל את כל הרכיבים
         LinearLayout layout = new LinearLayout(this);
         layout.setOrientation(LinearLayout.VERTICAL); // מסדר את הרכיבים בטור
@@ -181,7 +182,6 @@ public class MainActivity extends AppCompatActivity implements CustomAlertDialog
         layout.addView(btn);
         // מכניסים את ה-LinearLayout לתוך הדיאלוג
         builder.setView(layout);
-
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -191,7 +191,6 @@ public class MainActivity extends AppCompatActivity implements CustomAlertDialog
                 if(s1.equals("")||s2.equals(""))
                 {
                     tv.setText("Enter both numbers");
-                    return;
                 }
                 else {
                     int num1 = Integer.parseInt(s1);
@@ -205,12 +204,12 @@ public class MainActivity extends AppCompatActivity implements CustomAlertDialog
     private void customAlert() {
         customAlertDialog = new CustomAlertDialog(MainActivity.this, (CustomAlertDialog.DialogClickListener) this);
         customAlertDialog.setIcon(outline_crisis_alert_24);
-        customAlertDialog.setButtonPositive("Continue", Color.GREEN);
-        customAlertDialog.setButtonNegative("No", Color.RED);
-        //customAlertDialog.inVisibleButtonNegative();
         customAlertDialog.setTitle("Important Message!!!");
         customAlertDialog.setMessage("This is a custom alert!\n" +
                 "Pressing on 'continue' button will move to the next screen.");
+        customAlertDialog.setButtonPositive("Continue", Color.GREEN);
+        customAlertDialog.setButtonNegative("No", Color.RED);
+        //customAlertDialog.inVisibleButtonNegative();
         customAlertDialog.show();
     }
 
